@@ -26,6 +26,7 @@ class Github {
             this.createUser(data);
         } catch (err) {
             console.log("Error:", err);
+            document.getElementById("avatar").src = `https://cdn.pixabay.com/photo/2018/11/13/22/01/avatar-3814081_1280.png`;
             document.getElementById("name").innerText = "User not Found";
             document.getElementById("follower").innerText = "-";
             document.getElementById("following").innerText = "-";
@@ -36,7 +37,6 @@ class Github {
     }
 
     createUser(user) {
-        document.getElementById("avatar").src = `${user.avatar_url}`;
         document.getElementById("avatar").alt = `${user.login}`;
         document.getElementById("name").innerText = `${user.name || user.login}`;
         document.getElementById("bio").innerText = `${user.bio || "Not Available"}`;
