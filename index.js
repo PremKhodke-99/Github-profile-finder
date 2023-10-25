@@ -37,6 +37,7 @@ class Github {
     }
 
     createUser(user) {
+        document.getElementById("avatar").src = `${user.avatar_url}`;
         document.getElementById("avatar").alt = `${user.login}`;
         document.getElementById("name").innerText = `${user.name || user.login}`;
         document.getElementById("bio").innerText = `${user.bio || "Not Available"}`;
