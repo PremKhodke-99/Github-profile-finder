@@ -2,7 +2,6 @@ class Github {
     constructor() {
         this.form = document.getElementById("form");
         this.input = document.getElementById("search");
-        // this.card = document.getElementById("card");
 
         this.form.addEventListener("submit", async (event) => {
             event.preventDefault();
@@ -13,7 +12,6 @@ class Github {
             }
         });
 
-        // this.getUserDetails("Tom The Cat");
     }
 
     async getUserDetails(username) {
@@ -28,7 +26,12 @@ class Github {
             this.createUser(data);
         } catch (err) {
             console.log("Error:", err);
-            // this.card.innerHTML = "<p>User details not Available</p>";
+            document.getElementById("name").innerText = "User not Found";
+            document.getElementById("follower").innerText = "-";
+            document.getElementById("following").innerText = "-";
+            document.getElementById("repos").innerText = "-";
+            document.getElementById("twitter").innerText = "-";
+            document.getElementById("location").innerText = "-";
         }
     }
 
